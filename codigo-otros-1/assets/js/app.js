@@ -1,9 +1,34 @@
+/*
+LO QUE HACE ESTE PROGRAMA USAR LA API FETCH PARA DESPUES MOSTRAR LOS DATOS EN EL HTML
+
+PRIMERO GUARDAMOS LA DIRECCION URL EN UNA VARIABLE
+
+DESPUES CREAMOS CONSTANTES DONDE PONDREMOS LOS DATOS SOLICITADOS
+
+CON LA API FETCH PONEMOS LA DIRRECCION URL 
+NOS REGRESA UN DATA
+Y ESA DATA LA TENEMOS QUE CONVERTIR A JSON
+
+DESPUES DE CONVERTIR SELECCIONAMOS QUE ES LO QUE QUEREMOS EN ESTE CASO
+
+NAME 
+BLOG 
+LOCATION
+
+Y LA PONEMOS EN NUESTRA CONSTANTE $N,$B,$L 
+PARA MOSTRAR EN EL HTML
+
+
+*/
+
+
+
 
 // estamos guardando el url en baseEndpoint
 const baseEndpoint = 'https://api.github.com';
 const usersEndpoint = `${baseEndpoint}/users`;
 
-// corregi las dos lineas siguientes
+// corregi las tres lineas siguientes
 const $n = document.querySelector('[name="name"]');
 const $b = document.querySelector('[name="blog"]');
 const $l = document.querySelector('[name="location"]');
@@ -37,4 +62,6 @@ function handleError(err) {
   $n.textContent = `Algo salió mal: ${err}`;
 }
 
+
+//llamamos a la funcion con el usert stolinski
 displayUser('stolinski').catch(handleError);
